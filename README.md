@@ -1,6 +1,6 @@
 # name-generator
-Generates names based on a list of names provided.
-Works with Latin and Cyrillic scripts.
+Generates names based on a list of names provided./n
+Works with Latin and Cyrillic scripts./n
 Isn't case-sensitive. "joHn, JAnE, CARL" will be rendered as "john, jane, carl".
 Treats any non-alphabetic symbols and any number of them as single whitespaces. "John,,,, Jane ; ; Carl$$" will be rendered as "john, jane, carl".
 CAUTION! This applies to names with non-alphabetic symbols within them as well. "John, Jane, D'Amato" will be rendered as "john, jane, d, amato".
