@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Name Generator</h1>
+
+    <main>
+
+        <div id="setup">
+            <h2>Input</h2>
+            <textarea id="textareabox" name="textarea1"
+                placeholder="Insert your name list here.&#10The register and the space and symbols between the names don't matter.&#10A minimum of 2 names is required.&#10A minimum of 100 names is recommended."
+                style="width: 340px;; height: 100px; margin-bottom: 5px"></textarea>
+            <br>
+            <input type="button" value="Analyze" onclick="getTextNew()" />
+            <p id="status" style="width: 350px;">Insert your name list and click "Analyze"</p>
+        </div>
+
+        <div id="settings">
+            <h2>Settings</h2>
+            <label id="precisionLabel" for="precision">Precision:</label>
+            <div id="precisionContainer">
+                <div class="precision">
+                    <input type="radio" id="low" name="precision" value="low">
+                    <label for="low">Low</label>
+                </div>
+                <div class="precision">
+                    <input type="radio" id="medium" name="precision" value="medium" checked>
+                    <label for="medium">Medium</label>
+                </div>
+                <div class="precision">
+                    <input type="radio" id="high" name="precision" value="high">
+                    <label for="high">High</label>
+                </div>
+            </div>
+            <label id="nameLengthLabel" for="nameLength">Name length:</label>
+            <input id="nameLength" type="number" name="nameLength" value="5" min="4" max="20">
+            <p id="settings-description">The higher the precision the closer to the original the names will sound.<br />The length of thename must be between 4 and 20 symbols.</p>
+        </div>
+
+        <div id="output">
+            <h2>Output</h2>
+            <p style="display: none; color: black" id="results"></p>
+            <input style="display: none;" id="print" type="button" value="Generate" onclick="printNameNew()" />
+        </div>
+
+    </main>
+</body>
+</html>
