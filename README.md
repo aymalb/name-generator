@@ -1,5 +1,5 @@
 # name-generator
-Generates names based on a list of names provided.
+Generates names based on a list of names provided.<br />
 Works with Latin and Cyrillic scripts.
 Isn't case-sensitive. "joHn, JAnE, CARL" will be rendered as "john, jane, carl".
 Treats any non-alphabetic symbols and any number of them as single whitespaces. "John,,,, Jane ; ; Carl$$" will be rendered as "john, jane, carl".
