@@ -10,7 +10,7 @@ function getTextNew() {
     //предоставленных имен и передает список функции генерации объектов
     let tex = document.getElementById("textareabox").value.toLowerCase().split(/[^а-яА-Яa-zA-Z]+/);
     if (tex.length < 2) {
-        document.getElementById('status').innerHTML = "Not enough names! A minimum of 2 is required!"
+        document.getElementById('status').textContent = "Not enough names! A minimum of 2 is required!"
         document.getElementById('status').style.color = "#ffa8a8";
         objLow = {};
         objMedium = {};
@@ -20,10 +20,10 @@ function getTextNew() {
         document.getElementById('results').style.display = "none";
         return;
     } else if (tex.length >= 2 & tex.length < 100) {
-        document.getElementById('status').innerHTML = "Analysis complete! A greater number of names is recommended!"
+        document.getElementById('status').textContent = "Analysis complete! A greater number of names is recommended!"
         document.getElementById('status').style.color = "#ffc89c";
     } else {
-        document.getElementById('status').innerHTML = "Analysis complete!"
+        document.getElementById('status').textContent = "Analysis complete!"
         document.getElementById('status').style.color = "#a4ffa1";
     }
     document.getElementById('textareabox').value = "";
@@ -115,7 +115,7 @@ function printNameNew() {
     let rad = '';
     let nameLength = document.getElementById('nameLength').value;
     if (nameLength > 20 | nameLength < 4) {
-        document.getElementById('results').innerHTML = "Invalid length!"; return;
+        document.getElementById('results').textContent = "Invalid length!"; return;
     }
     for (let i = 0; i < radArr.length; i++) {
         if (radArr[i].checked) {
@@ -123,9 +123,9 @@ function printNameNew() {
         }
     }
     switch (rad) {
-        case 'low': document.getElementById('results').innerHTML = generateName(objLow, nameLength, rad); break;
-        case 'medium': document.getElementById('results').innerHTML = generateName(objMedium, nameLength, rad); break;
-        case 'high': document.getElementById('results').innerHTML = generateName(objHigh, nameLength, rad); break;
+        case 'low': document.getElementById('results').textContent = generateName(objLow, nameLength, rad); break;
+        case 'medium': document.getElementById('results').textContent = generateName(objMedium, nameLength, rad); break;
+        case 'high': document.getElementById('results').textContent = generateName(objHigh, nameLength, rad); break;
         default: break;
     };
     return;
