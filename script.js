@@ -1,8 +1,13 @@
-let objLow = {};
-let objMedium = {};
-let objHigh = {};
+/*Данная программа принимает список имен, разделяет каждое имя на буквосочетания,
+считает, сколько раз то, или иное буквосочетание встречается в списке и генерирует
+имя в соответствии с этими данными*/
+let objLow = {};//В данном объекте хранятся буквосочетания с двумя буквами (напр. "Настя" => "на" "ас" "ст" "тя")
+let objMedium = {};//В данном объекте хранятся буквосочетания с тремя буквами (напр. "Настя" => "нас" "аст" "стя")
+let objHigh = {};//В данном объекте хранятся буквосочетания с четырьмя буквами (напр. "Настя" => "наст" "астя")
 
 function getTextNew() {
+    //Принимает список имен из текстовой области, проверяет количество
+    //предоставленных имен и передает список функции генерации объектов
     let tex = document.getElementById("textareabox").value.toLowerCase().split(/[^а-яА-Яa-zA-Z]+/);
     if (tex.length < 2) {
         document.getElementById('status').innerHTML = "Not enough names! A minimum of 2 is required!"
@@ -31,6 +36,7 @@ function getTextNew() {
 }
 
 function createObject(arr, prec) {
+    //Создает объект, в котором храняться буквосочетания и их количество
     switch (prec) {
         case 'low': endInd = 1; break;
         case 'medium': endInd = 2; break;
@@ -57,6 +63,9 @@ function createObject(arr, prec) {
 }
 
 function generateName(matrix, leng, prec) {
+    //Создает имя в зависимости от выбранной длины и точности (один из трех объектов)
+    //Низкая точность использует оббъект с двухбуквенными сочетаниями,
+    //средняя - с трехбуквенными, высокая - с четырехбуквенными
     let z = 0;
     let name = '';
     let stInd = 0;
@@ -101,6 +110,7 @@ function generateName(matrix, leng, prec) {
 }
 
 function printNameNew() {
+    //Выводит сгенерированное имя в окно Results.
     let radArr = document.getElementsByName('precision');
     let rad = '';
     let nameLength = document.getElementById('nameLength').value;
